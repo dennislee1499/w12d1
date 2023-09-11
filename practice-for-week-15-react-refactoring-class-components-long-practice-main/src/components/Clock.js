@@ -93,15 +93,23 @@ function Clock(){
   const [time,setTime] = useState(new Date());
   
   const tick = () => {
+
+    console.log("Tick")
     return setTime(new Date());
+
   }
 
   useEffect(()=> {
     const interval = setInterval(tick,1000);
     
-    // return (
-    //   clearInterval(interval)
-    // )
+
+    
+    return () =>{
+
+      clearInterval(interval)
+      console.log("Unmounted")
+      
+    }
     
   },[])
 
