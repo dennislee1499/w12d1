@@ -47,9 +47,8 @@ class OldApp extends React.Component {
 function App() {
   const [showClock, setShowClock] = useState(true)
   const toggleClock = () => {
-    return (
-      setShowClock(!showClock)
-    )
+    return setShowClock(!showClock)
+    
   }
 
   return (
